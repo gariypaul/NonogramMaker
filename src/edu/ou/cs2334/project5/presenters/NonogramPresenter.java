@@ -113,5 +113,21 @@ public class NonogramPresenter implements Openable{
 		view.showVictoryAlert();
 		
 	}
+	
+
+	private void removeCellViewMarks() {
+		// TODO Auto-generated method stub
+		for(int r=0;r<model.getNumRows();r++) {
+			for(int c=0;c<model.getNumCols();c++) {
+				if(model.getCellState(r, c)==CellState.MARKED) {
+						model.setCellState(r, c, CellState.EMPTY);
+						view.setCellState(r, c, CellState.EMPTY);
+						view.setRowClueState(r, model.isRowSolved(r));
+						view.setColClueState(c, model.isColSolved(c));
+				}
+			}
+		}	
+		
+	}
 
 }
