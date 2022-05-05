@@ -3,7 +3,10 @@ package edu.ou.cs2334.project5.views.clues;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.geometry.HPos;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.layout.FlowPane;
 
 /**
@@ -46,8 +49,12 @@ public abstract class AbstractGroupCluesView extends FlowPane {
 		setMaxWidth(USE_PREF_SIZE);
 		setMaxHeight(USE_PREF_SIZE);
 		
+		
+		
 		// TODO: Possibly add something here. Do not directly discuss your
 		// solution on Discord.
+		setPrefWrapLength(Double.MAX_VALUE);
+		
 	}
 	
 	protected abstract AbstractOrientedClueView makeClue(int[] clue, int cellLength, int numClueUnits);
