@@ -50,6 +50,10 @@ public class NonogramModel {
 	public int getNumCols() {
 		return this.colClues.length;
 	}
+	
+	public int getNumRows() {
+		return this.rowClues.length;
+	}
 	/* Helper methods */
 	
 	// This is implemented for you
