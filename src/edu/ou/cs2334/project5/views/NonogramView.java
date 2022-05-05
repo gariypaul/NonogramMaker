@@ -47,4 +47,8 @@ public class NonogramView extends BorderPane{
 		bottomHBox.getChildren().addAll(loadBtn,resetBtn);
 	}
 	
+	public CellView getCellView(int rowIdx, int colIdx) {
+		return cellGridView.getCellView(rowIdx, colIdx);
+	}
+	
 }
