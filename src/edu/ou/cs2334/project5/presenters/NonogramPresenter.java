@@ -21,4 +21,17 @@ public class NonogramPresenter implements Openable{
 	private int cellLength;
 	private final static String DEFAULT_PUZZLE = "puzzles/space-invader.txt";
 	
+	public NonogramPresenter (int cellLength) {
+		this.cellLength=cellLength;
+		try {
+			model = new NonogramModel(this.DEFAULT_PUZZLE);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		view = new NonogramView();
+		initializePresenter();
+		
+	}
 }
