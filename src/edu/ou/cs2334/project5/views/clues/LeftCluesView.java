@@ -34,17 +34,11 @@ public class LeftCluesView extends AbstractGroupCluesView {
 		setPrefWrapLength(Double.MAX_VALUE);
 	}
 
-	//TODO: Commit full method implementation
 	@Override
 	protected AbstractOrientedClueView makeClue(int[] clue, int cellLength, int numClueUnits) {
 		// TODO Auto-generated method stub
 		HorizontalClueView madeClue = new HorizontalClueView(clue, cellLength, numClueUnits);
 		return madeClue;
-	}
-	//TODO: Commit
-	public void setRowState(int rowIdx, boolean solved) {
-		// TODO Auto-generated method stub
-		super.setState(rowIdx, solved);
 	}
 
 }
