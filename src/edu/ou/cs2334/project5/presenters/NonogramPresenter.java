@@ -130,4 +130,15 @@ public class NonogramPresenter implements Openable{
 		
 	}
 
+
+	public Window getWindow() {
+		// TODO Auto-generated method stub
+		try {
+			return view.getScene().getWindow();
+		}
+		catch(Exception e) {
+			return null;
+		}
+	}
+	
 }
