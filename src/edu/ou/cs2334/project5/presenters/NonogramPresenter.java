@@ -159,7 +159,15 @@ public class NonogramPresenter implements Openable{
 			view.setColClueState(c, model.isColSolved(c));
 		}
 		view.setPuzzleState(model.isSolved());
-		
-		
+	}
+	
+	private void configureButtons() {
+
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Open");
+		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Text Files", "*.txt"));
+		fileChooser.setInitialDirectory(new File("."));
+		view.getLoadButton().setOnAction(new OpenHandler(getWindow(), fileChooser, this));
+		view.getResetButton().setOnAction(e-> resetPuzzle());
 	}
 }
