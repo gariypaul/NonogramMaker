@@ -3,7 +3,10 @@ package edu.ou.cs2334.project5.views.clues;
 import java.util.LinkedList;
 import java.util.List;
 
+import javafx.geometry.HPos;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.layout.FlowPane;
 
 /**
