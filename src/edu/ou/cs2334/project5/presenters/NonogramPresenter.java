@@ -141,4 +141,7 @@ public class NonogramPresenter implements Openable{
 		}
 	}
 	
+	public Pane getPane() {
+		return this.view;
+	}
 }
