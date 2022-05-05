@@ -29,4 +29,10 @@ public class CellGridView extends GridPane{
 		return this.cellViews[rowIdx][colIdx];
 	}
 	
+
+	public void setCellState(int rowIdx, int colIdx, CellState state) {
+		this.cellViews[rowIdx][colIdx].setState(state);
+	}
+	
+	
 }
