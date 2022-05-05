@@ -25,4 +25,18 @@ public class NonogramView extends BorderPane{
 		this.getStyleClass().add(STYLE_CLASS);
 	}
 	
+	public void initialize(int[][] rowClues, int[][] colClues, int cellLength) {
+		leftCluesView = new LeftCluesView(rowClues,cellLength,CluesWidth(rowClues));
+		topCluesView = new TopCluesView(colClues,cellLength,CluesWidth(colClues));
+		cellGridView = new CellGridView(rowClues.length,colClues.length,cellLength);
+		initBottomHBox();
+		this.setLeft(leftCluesView);
+		this.setTop(topCluesView);
+		this.setCenter(cellGridView);
+		this.setBottom(bottomHBox);
+		BorderPane.setAlignment(leftCluesView, Pos.CENTER_LEFT);
+		BorderPane.setAlignment(topCluesView, Pos.TOP_RIGHT);
+		BorderPane.setAlignment(cellGridView, Pos.CENTER);
+	}
+	
 }
