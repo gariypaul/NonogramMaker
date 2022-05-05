@@ -54,6 +54,11 @@ public class NonogramModel {
 	public int getNumRows() {
 		return this.rowClues.length;
 	}
+	
+	public CellState getCellState(int rowIdx, int colIdx) {
+		return this.cellStates[rowIdx][colIdx];
+	}
+	
 	/* Helper methods */
 	
 	// This is implemented for you
