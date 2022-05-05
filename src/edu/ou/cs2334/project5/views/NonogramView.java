@@ -39,4 +39,12 @@ public class NonogramView extends BorderPane{
 		BorderPane.setAlignment(cellGridView, Pos.CENTER);
 	}
 	
+	private void initBottomHBox() {
+		bottomHBox = new HBox();
+		bottomHBox.setAlignment(Pos.CENTER);
+		loadBtn = new Button("Load");
+		resetBtn = new Button("Reset");
+		bottomHBox.getChildren().addAll(loadBtn,resetBtn);
+	}
+	
 }
