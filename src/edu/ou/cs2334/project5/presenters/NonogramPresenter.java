@@ -90,4 +90,20 @@ public class NonogramPresenter implements Openable{
 			updateCellState(rowIdx,colIdx,CellState.EMPTY);
 		}
 	}
+	
+	private void updateCellState(int rowIdx, int colIdx, CellState state) {
+		// TODO Auto-generated method stub
+		if(model.getCellState(rowIdx, colIdx)!=state&&!model.isSolved()) {
+			model.setCellState(rowIdx, colIdx, state);
+			view.setCellState(rowIdx, colIdx, state);
+			view.setRowClueState(rowIdx, model.isRowSolved(rowIdx));
+			view.setColClueState(colIdx, model.isColSolved(colIdx));
+			view.setPuzzleState(model.isSolved());
+			if(model.isSolved()) {
+				processVictory();
+			}
+		}
+		
+	}
+
 }
