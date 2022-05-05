@@ -1,6 +1,9 @@
 package edu.ou.cs2334.project5.views.clues;
 
+import javafx.geometry.HPos;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 
 /**
  * Represents a view containing all column clues displayed above the grid.
@@ -28,6 +31,10 @@ public class TopCluesView extends AbstractGroupCluesView {
 		
 		// TODO: Possibly add something here. Do not directly discuss your
 		// solution on Discord.
+		setPrefWrapLength(Double.MAX_VALUE);
 	}
+	
+	
+	
 
 }
