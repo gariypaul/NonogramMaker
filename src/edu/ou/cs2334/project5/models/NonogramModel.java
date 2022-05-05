@@ -170,6 +170,15 @@ public class NonogramModel {
 		return projectedCol;
 	}
 	
+	public int[] projectCellStatesRow(int rowIdx) {
+		// TODO Auto-generated method stub
+		boolean[] rowStates = new boolean[this.getNumCols()];
+		for(int i=0; i<this.getNumCols();i++) {
+			rowStates[i] = CellState.toBoolean(this.cellStates[rowIdx][i]);
+		}
+		int[] projectedRow = project(rowStates).stream().mapToInt(Integer::intValue).toArray();
+		return projectedRow;
+	}
 	
 	// TODO: Implement this method
 	private static int[][] deepCopy(int[][] array) {
