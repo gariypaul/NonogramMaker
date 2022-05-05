@@ -34,7 +34,12 @@ public class TopCluesView extends AbstractGroupCluesView {
 		setPrefWrapLength(Double.MAX_VALUE);
 	}
 	
-	
+	@Override
+	protected AbstractOrientedClueView makeClue(int[] clue, int cellLength, int numClueUnits) {
+		// TODO Auto-generated method stub
+		VerticalClueView madeClue = new VerticalClueView(clue,cellLength,numClueUnits);
+		return madeClue;
+	}
 	
 
 }
