@@ -42,4 +42,14 @@ public class NonogramPresenter implements Openable{
 		synchronize();
 		configureButtons();
 	}
+	
+	private void initializeView() {
+		// TODO Auto-generated method stub
+		view.getChildren().clear();
+		view.initialize(model.getRowClues(),model.getColClues(),this.cellLength);
+		view.setPuzzleState(model.isSolved());
+		if(this.getWindow()!=null) {
+			this.getWindow().sizeToScene();
+		}
+	}
 }
