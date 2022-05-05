@@ -180,17 +180,20 @@ public class NonogramModel {
 		return projectedRow;
 	}
 	
-	// TODO: Implement this method
+	
 	private static int[][] deepCopy(int[][] array) {
-		// You can do this in under 10 lines of code. If you ask the internet
-		// "how do I do a deep copy of a 2d array in Java," be sure to cite
-		// your source.
-		// Note that if we used a 1-dimensional array to store our arrays,
-		// we could simply use Arrays.copyOf directly without this helper
-		// method.
-		// Do not ask about this on Discord. You can do this on your own. :)
-		return null;
+		if(array==null) {
+			return null;
+		}
+		final int[][] copy = new int[array.length][array[0].length];
+		for (int r=0;r<array.length;r++) {
+			copy[r] = Arrays.copyOf(array[r], array[r].length);
+				
+		}
+		
+		return copy;
 	}
+	
 	
 	// This method is implemented for you. You need to figure out how it is useful.
 	private static int[][] readClueLines(BufferedReader reader, int numLines)
