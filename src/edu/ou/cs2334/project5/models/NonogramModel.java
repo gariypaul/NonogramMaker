@@ -84,6 +84,16 @@ public class NonogramModel {
 	public int[] getRowClue(int rowIdx) {
 		return Arrays.copyOf(this.rowClues[rowIdx], this.rowClues[rowIdx].length);
 	}
+	
+	public int[] getColClue(int colIdx) {
+		return Arrays.copyOf(this.colClues[colIdx], this.colClues[colIdx].length);
+	}
+	
+	public boolean isRowSolved(int rowIdx) {
+		int[] row = projectCellStatesRow(rowIdx);
+		boolean isSolved = Arrays.equals(row,this.rowClues[rowIdx]);
+		return isSolved;
+	}
 	/* Helper methods */
 	
 	// This is implemented for you
@@ -102,9 +112,7 @@ public class NonogramModel {
 		return cellStates;
 	}
 	
-	public int[] getColClue(int colIdx) {
-		return Arrays.copyOf(this.colClues[colIdx], this.colClues[colIdx].length);
-	}
+	
 	
 	// TODO: Implement this method
 	private static int[][] deepCopy(int[][] array) {
