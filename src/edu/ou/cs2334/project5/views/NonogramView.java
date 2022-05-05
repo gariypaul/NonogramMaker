@@ -88,4 +88,17 @@ public class NonogramView extends BorderPane{
 		victoryAlert.show();
 		
 	}
+	/*Helper Methods*/
+	
+	private int CluesWidth(int[][] cluesView) {
+		int width = 0;
+		for(int i=0; i<cluesView.length; i++) {
+			if(cluesView[i].length>width) {
+				width=cluesView[i].length;
+			}
+		}
+		
+		return width;
+	}
+	
 }
