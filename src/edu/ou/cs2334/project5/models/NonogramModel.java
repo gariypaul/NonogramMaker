@@ -59,6 +59,9 @@ public class NonogramModel {
 		return this.cellStates[rowIdx][colIdx];
 	}
 	
+	public boolean getCellStateasBoolean (int rowIdx, int colIdx) {
+		return CellState.toBoolean(this.cellStates[rowIdx][colIdx]);
+	}
 	/* Helper methods */
 	
 	// This is implemented for you
