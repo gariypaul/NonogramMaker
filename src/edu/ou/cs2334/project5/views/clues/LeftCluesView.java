@@ -40,5 +40,10 @@ public class LeftCluesView extends AbstractGroupCluesView {
 		HorizontalClueView madeClue = new HorizontalClueView(clue, cellLength, numClueUnits);
 		return madeClue;
 	}
+	
+	public void setRowState(int rowIdx, boolean solved) {
+		// TODO Auto-generated method stub
+		super.setState(rowIdx, solved);
+	}
 
 }
