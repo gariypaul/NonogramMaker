@@ -51,4 +51,8 @@ public class NonogramView extends BorderPane{
 		return cellGridView.getCellView(rowIdx, colIdx);
 	}
 	
+	public void setCellState(int rowIdx, int colIdx, CellState state) {
+		cellGridView.setCellState(rowIdx, colIdx, state);
+	}
+	
 }
