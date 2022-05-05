@@ -63,4 +63,13 @@ public class NonogramView extends BorderPane{
 		topCluesView.setColState(colIdx,solved);
 	}
 	
+	public void setPuzzleState(boolean solved) {
+		if(solved==true) {
+			this.getStyleClass().add(SOLVED_STYLE_CLASS);
+		}
+		else {
+			this.getStyleClass().removeAll(Collections.singleton(SOLVED_STYLE_CLASS));
+		}
+		
+	}
 }
