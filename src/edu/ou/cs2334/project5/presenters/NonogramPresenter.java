@@ -170,4 +170,12 @@ public class NonogramPresenter implements Openable{
 		view.getLoadButton().setOnAction(new OpenHandler(getWindow(), fileChooser, this));
 		view.getResetButton().setOnAction(e-> resetPuzzle());
 	}
+	
+
+	private void resetPuzzle() {
+		// TODO Auto-generated method stub
+		model.resetCells();
+		synchronize();
+	}
+
 }
