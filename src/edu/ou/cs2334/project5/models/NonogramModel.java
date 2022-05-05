@@ -62,6 +62,16 @@ public class NonogramModel {
 	public boolean getCellStateasBoolean (int rowIdx, int colIdx) {
 		return CellState.toBoolean(this.cellStates[rowIdx][colIdx]);
 	}
+	
+	public boolean setCellState(int rowIdx, int colIdx, CellState state) {
+		if(state==null||isSolved()||this.getCellState(rowIdx, colIdx)==state) {
+			return false;
+		}
+		else {
+			this.cellStates[rowIdx][colIdx] = state;
+			return true;
+		}
+	}
 	/* Helper methods */
 	
 	// This is implemented for you
