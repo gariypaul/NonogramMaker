@@ -35,16 +35,11 @@ public class NonogramModel {
 		int numRows = Integer.parseInt(fields[IDX_NUM_ROWS]);
 		int numCols = Integer.parseInt(fields[IDX_NUM_COLS]);
 
-		// TODO: Initialize cellStates.
-		// This is simple, and you should not ask about this on Discord.
 		
-		// TODO: Read in row clues.
-		// This is simple, and you should not ask about this on Discord.
+		this.cellStates= initCellStates(numRows,numCols);
+		this.rowClues=deepCopy(readClueLines(reader,numRows));
+		this.colClues=deepCopy(readClueLines(reader,numCols));
 		
-		// TODO: Read in column clues.
-		// This is simple, and you should not ask about this on Discord.
-		
-		// Close reader
 		reader.close();
 	}
 
