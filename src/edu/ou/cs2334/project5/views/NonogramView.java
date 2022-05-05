@@ -59,4 +59,8 @@ public class NonogramView extends BorderPane{
 		leftCluesView.setRowState(rowIdx,solved);
 	}
 	
+	public void setColClueState(int colIdx, boolean solved) {
+		topCluesView.setColState(colIdx,solved);
+	}
+	
 }
