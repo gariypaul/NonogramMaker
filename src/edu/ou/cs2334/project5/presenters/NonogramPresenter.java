@@ -177,5 +177,10 @@ public class NonogramPresenter implements Openable{
 		model.resetCells();
 		synchronize();
 	}
-
+	
+	@Override
+	public void open(File file) throws IOException {
+		model = new NonogramModel(file);
+		this.initializePresenter();
+	}
 }
