@@ -111,6 +111,15 @@ public class NonogramModel {
 		}
 		return isSolved;
 	}
+	
+	public void resetCells() {
+		for(int r=0;r<this.getNumRows();r++) {
+		 for(int c=0;c<this.getNumCols();c++) {
+			// this.setCellState(r, c, CellState.EMPTY);
+			 this.cellStates[r][c] = CellState.EMPTY;
+		 }
+		}
+	}
 	/* Helper methods */
 	
 	// This is implemented for you
