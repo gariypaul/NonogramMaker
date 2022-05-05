@@ -122,7 +122,29 @@ public class NonogramModel {
 	}
 	/* Helper methods */
 	
-	// This is implemented for you
+	public static List<Integer> project(boolean[] cells){
+		ArrayList<Integer> projection = new ArrayList<Integer>();	
+		int counter = 0;
+		for(int i=0;i<cells.length;i++) {
+			if(cells[i]==true) {
+				counter++;	
+			}
+			else if(counter>0){
+				projection.add(counter);
+				counter=0;
+			}
+		}
+		if(counter>0) {
+			projection.add(counter);
+		}
+		if(projection.size()==0) {
+			projection.add(0);
+		}
+		return projection;
+		
+	}
+	
+	
 	private static CellState[][] initCellStates(int numRows, int numCols) {
 		// Create a 2D array to store numRows * numCols elements
 		CellState[][] cellStates = new CellState[numRows][numCols];
