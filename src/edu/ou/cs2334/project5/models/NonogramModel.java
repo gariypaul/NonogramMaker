@@ -46,9 +46,8 @@ public class NonogramModel {
 	public NonogramModel(String filename) throws IOException {
 		// TODO: Fix this constructor
 		// This is simple, and you should not ask about this on Discord.
-		new NonogramModel(new File(filename));
+		this(new File(filename));
 	}
-	
 	// TODO: Add more TODOs
 	
 	/* Helper methods */
