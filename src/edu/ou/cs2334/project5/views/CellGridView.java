@@ -14,5 +14,16 @@ public class CellGridView extends GridPane{
 		
 	}
 	
+	public void initCells(int numRows, int numCols, int cellLength) {
+		this.getChildren().clear();
+		cellViews = new CellView[numRows][numCols];
+		for(int i=0; i<numRows;i++) {
+			for(int j=0;j<numCols;j++) {
+				cellViews[i][j] = new CellView(cellLength);
+				add(cellViews[i][j], j, i);
+			}
+		}
+	}
+	
 	
 }
