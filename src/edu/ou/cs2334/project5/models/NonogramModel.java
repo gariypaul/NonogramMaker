@@ -160,6 +160,15 @@ public class NonogramModel {
 		return cellStates;
 	}
 	
+	public int[] projectCellStatesCol(int colIdx) {
+		// TODO Auto-generated method stub
+		boolean[] colStates = new boolean [this.getNumRows()];
+		for(int i=0;i<this.getNumRows();i++) {
+			colStates[i] = CellState.toBoolean(this.cellStates[i][colIdx]);
+		}
+		int[] projectedCol = project(colStates).stream().mapToInt(Integer::intValue).toArray();
+		return projectedCol;
+	}
 	
 	
 	// TODO: Implement this method
