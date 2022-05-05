@@ -1,6 +1,9 @@
 package edu.ou.cs2334.project5.views.clues;
 
+import javafx.geometry.HPos;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 
 /**
  * Represents a view containing all row clues displayed to the left of the grid.
@@ -28,6 +31,20 @@ public class LeftCluesView extends AbstractGroupCluesView {
 		
 		// TODO: Possibly add something here. Do not directly discuss your
 		// solution on Discord.
+		setPrefWrapLength(Double.MAX_VALUE);
+	}
+
+	//TODO: Commit full method implementation
+	@Override
+	protected AbstractOrientedClueView makeClue(int[] clue, int cellLength, int numClueUnits) {
+		// TODO Auto-generated method stub
+		HorizontalClueView madeClue = new HorizontalClueView(clue, cellLength, numClueUnits);
+		return madeClue;
+	}
+	//TODO: Commit
+	public void setRowState(int rowIdx, boolean solved) {
+		// TODO Auto-generated method stub
+		super.setState(rowIdx, solved);
 	}
 
 }
