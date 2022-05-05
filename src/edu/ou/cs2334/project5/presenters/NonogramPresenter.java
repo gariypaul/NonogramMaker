@@ -105,5 +105,13 @@ public class NonogramPresenter implements Openable{
 		}
 		
 	}
+	
+	private void processVictory() {
+		// TODO Auto-generated method stub
+		removeCellViewMarks();
+		view.setPuzzleState(model.isSolved());
+		view.showVictoryAlert();
+		
+	}
 
 }
