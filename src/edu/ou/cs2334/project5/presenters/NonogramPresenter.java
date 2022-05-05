@@ -52,4 +52,22 @@ public class NonogramPresenter implements Openable{
 			this.getWindow().sizeToScene();
 		}
 	}
+	private void bindCellViews() {
+		// TODO Auto-generated method stub
+		for(int r=0;r<model.getNumRows();r++) {
+			for(int c=0;c<model.getNumCols();c++) {
+				final int row = r;
+				final int col = c;
+				view.getCellView(row, col).setOnMouseClicked(e->{
+					if(e.getButton()==MouseButton.PRIMARY) {
+						handleLeftClick(row,col);
+					}
+					else {
+						handleRightClick(row,col);
+					}
+				});
+			}	
+		}
+		
+	}
 }
