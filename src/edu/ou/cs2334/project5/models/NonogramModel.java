@@ -44,12 +44,12 @@ public class NonogramModel {
 	}
 
 	public NonogramModel(String filename) throws IOException {
-		// TODO: Fix this constructor
-		// This is simple, and you should not ask about this on Discord.
 		this(new File(filename));
 	}
-	// TODO: Add more TODOs
 	
+	public int getNumCols() {
+		return this.colClues.length;
+	}
 	/* Helper methods */
 	
 	// This is implemented for you
