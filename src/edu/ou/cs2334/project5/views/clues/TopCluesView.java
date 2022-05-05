@@ -41,5 +41,10 @@ public class TopCluesView extends AbstractGroupCluesView {
 		return madeClue;
 	}
 	
+	public void setColState(int colIdx, boolean solved) {
+		// TODO Auto-generated method stub
+		super.setState(colIdx, solved);
+		
+	}
 
 }
