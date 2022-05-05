@@ -76,4 +76,8 @@ public class NonogramView extends BorderPane{
 	public Button getLoadButton() {
 		return loadBtn;
 	}
+	
+	public Button getResetButton() {
+		return resetBtn;
+	}
 }
