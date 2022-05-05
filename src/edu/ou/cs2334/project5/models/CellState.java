@@ -6,6 +6,9 @@ public enum CellState {
 	FILLED,
 	MARKED;
 	
-	
+	public static boolean toBoolean (CellState state) {
+		
+		return (state.equals(CellState.FILLED)) ? true : false ;
+	}
 	
 }
