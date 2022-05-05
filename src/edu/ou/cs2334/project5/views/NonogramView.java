@@ -80,4 +80,12 @@ public class NonogramView extends BorderPane{
 	public Button getResetButton() {
 		return resetBtn;
 	}
+	
+	public void showVictoryAlert() {
+		Alert victoryAlert = new Alert(Alert.AlertType.INFORMATION);
+		victoryAlert.setTitle("Puzzle Solved");
+		victoryAlert.setContentText("You win!");
+		victoryAlert.show();
+		
+	}
 }
