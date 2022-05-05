@@ -80,6 +80,10 @@ public class NonogramModel {
 	public int[][] getColClues(){
 		return deepCopy(this.colClues);
 	}
+	
+	public int[] getRowClue(int rowIdx) {
+		return Arrays.copyOf(this.rowClues[rowIdx], this.rowClues[rowIdx].length);
+	}
 	/* Helper methods */
 	
 	// This is implemented for you
