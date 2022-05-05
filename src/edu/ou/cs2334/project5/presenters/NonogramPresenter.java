@@ -70,4 +70,14 @@ public class NonogramPresenter implements Openable{
 		}
 		
 	}
+	
+	private void handleRightClick(int rowIdx, int colIdx) {
+		// TODO Auto-generated method stub
+		if((model.getCellState(rowIdx,colIdx)==CellState.EMPTY)||(model.getCellState(rowIdx, colIdx)==CellState.FILLED)) {
+			updateCellState(rowIdx,colIdx,CellState.MARKED);
+		}
+		else {
+			updateCellState(rowIdx,colIdx,CellState.EMPTY);
+		}
+	}
 }
