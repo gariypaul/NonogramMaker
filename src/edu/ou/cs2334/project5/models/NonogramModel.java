@@ -94,6 +94,12 @@ public class NonogramModel {
 		boolean isSolved = Arrays.equals(row,this.rowClues[rowIdx]);
 		return isSolved;
 	}
+	
+	public boolean isColSolved(int colIdx) {
+		int[] col = projectCellStatesCol(colIdx);
+		boolean isSolved = Arrays.equals(col,this.colClues[colIdx]);
+		return isSolved;
+	}
 	/* Helper methods */
 	
 	// This is implemented for you
