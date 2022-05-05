@@ -195,7 +195,7 @@ public class NonogramModel {
 	}
 	
 	
-	// This method is implemented for you. You need to figure out how it is useful.
+	
 	private static int[][] readClueLines(BufferedReader reader, int numLines)
 			throws IOException {
 		// Create a new 2D array to store the clues
