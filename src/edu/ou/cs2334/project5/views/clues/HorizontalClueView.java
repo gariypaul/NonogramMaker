@@ -24,6 +24,7 @@ public class HorizontalClueView extends AbstractOrientedClueView {
 	public HorizontalClueView(int[] rowClue, int cellLength, int width) {
 		super(Orientation.HORIZONTAL, STYLE_CLASS, rowClue, cellLength, width);
 		setMaxWidth(width * cellLength);
+		
 	}
 
 }
