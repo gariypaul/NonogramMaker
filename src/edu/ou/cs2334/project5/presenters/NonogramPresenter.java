@@ -144,4 +144,22 @@ public class NonogramPresenter implements Openable{
 	public Pane getPane() {
 		return this.view;
 	}
+	
+	private void synchronize() {
+		// TODO Auto-generated method stub
+		for(int r=0;r<model.getNumRows();r++) {
+			for(int c=0;c<model.getNumCols();c++) {
+				view.setCellState(r, c, model.getCellState(r, c));
+			}
+		}
+		for(int r=0;r<model.getNumRows();r++) {
+			view.setRowClueState(r, model.isRowSolved(r));
+		}
+		for(int c=0;c<model.getNumCols();c++) {
+			view.setColClueState(c, model.isColSolved(c));
+		}
+		view.setPuzzleState(model.isSolved());
+		
+		
+	}
 }
