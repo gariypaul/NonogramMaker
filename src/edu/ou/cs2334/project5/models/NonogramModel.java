@@ -72,6 +72,10 @@ public class NonogramModel {
 			return true;
 		}
 	}
+	
+	public int[][] getRowClues(){
+		return deepCopy(this.rowClues);
+	}
 	/* Helper methods */
 	
 	// This is implemented for you
