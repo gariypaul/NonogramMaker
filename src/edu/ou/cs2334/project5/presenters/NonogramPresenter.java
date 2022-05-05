@@ -34,4 +34,12 @@ public class NonogramPresenter implements Openable{
 		initializePresenter();
 		
 	}
+	
+
+	private void initializePresenter() {
+		initializeView();
+		bindCellViews();
+		synchronize();
+		configureButtons();
+	}
 }
