@@ -100,6 +100,17 @@ public class NonogramModel {
 		boolean isSolved = Arrays.equals(col,this.colClues[colIdx]);
 		return isSolved;
 	}
+	
+	public boolean isSolved() {
+		boolean isSolved=true;
+		for(int r=0;r<this.getNumRows()&&isSolved!=false;r++) {
+			isSolved = isRowSolved(r);
+		}
+		for(int c=0;c<this.getNumCols()&&isSolved!=false;c++) {
+			isSolved = isColSolved(c);
+		}
+		return isSolved;
+	}
 	/* Helper methods */
 	
 	// This is implemented for you
