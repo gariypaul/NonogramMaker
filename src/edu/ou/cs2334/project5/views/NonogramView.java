@@ -20,6 +20,9 @@ public class NonogramView extends BorderPane{
 	private HBox bottomHBox;
 	private Button loadBtn;
 	private Button resetBtn;
-
+	
+	public NonogramView() {
+		this.getStyleClass().add(STYLE_CLASS);
+	}
 	
 }
