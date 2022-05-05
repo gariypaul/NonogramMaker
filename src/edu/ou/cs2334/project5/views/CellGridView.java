@@ -25,5 +25,8 @@ public class CellGridView extends GridPane{
 		}
 	}
 	
+	public CellView getCellView (int rowIdx, int colIdx) {
+		return this.cellViews[rowIdx][colIdx];
+	}
 	
 }
