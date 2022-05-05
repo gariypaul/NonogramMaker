@@ -102,6 +102,10 @@ public class NonogramModel {
 		return cellStates;
 	}
 	
+	public int[] getColClue(int colIdx) {
+		return Arrays.copyOf(this.colClues[colIdx], this.colClues[colIdx].length);
+	}
+	
 	// TODO: Implement this method
 	private static int[][] deepCopy(int[][] array) {
 		// You can do this in under 10 lines of code. If you ask the internet
