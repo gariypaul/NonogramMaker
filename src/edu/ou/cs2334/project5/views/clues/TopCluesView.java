@@ -41,6 +41,11 @@ public class TopCluesView extends AbstractGroupCluesView {
 		return madeClue;
 	}
 	
+	/**
+	 * This method sets the state in which the column is in 
+	 * @param colIdx this is the int value of the specified column's index
+	 * @param solved this is true if it is solved and false if not
+	 */
 	public void setColState(int colIdx, boolean solved) {
 		// TODO Auto-generated method stub
 		super.setState(colIdx, solved);

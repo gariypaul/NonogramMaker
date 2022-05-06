@@ -41,6 +41,11 @@ public class LeftCluesView extends AbstractGroupCluesView {
 		return madeClue;
 	}
 	
+	/**
+	 * This method sets the state of the row in the specified index
+	 * @param rowIdx this is the int value of the specified row
+	 * @param solved this is true if solved or false if not solved
+	 */
 	public void setRowState(int rowIdx, boolean solved) {
 		// TODO Auto-generated method stub
 		super.setState(rowIdx, solved);

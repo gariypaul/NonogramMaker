@@ -4,16 +4,25 @@ import edu.ou.cs2334.project5.presenters.NonogramPresenter;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+/**
+ * This is the Main class of the Nonogram Application
+ * @author gariy
+ *
+ */
 public class Main extends Application{
 	private static final int IDX_CELL_SIZE = 0;
 	private static final int DEFAULT_CELL_SIZE = 30;
-	
+	/**
+	 * This is where the application is launched
+	 * @param args these are the arguments passed to the application
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
 	
-
+	/**
+	 * This method Starts the Nonogram application 
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		

@@ -4,7 +4,11 @@ import javafx.collections.ObservableList;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-
+/**
+ * This class created CellView objects which are to be displyed on the nonogram Grid
+ * @author gariy 
+ *
+ */
 public class CellView extends StackPane {
 
 	private static final String STYLE_CLASS = "cell-view";
@@ -16,14 +20,20 @@ public class CellView extends StackPane {
 	private Rectangle background = new Rectangle();
 	private Line xLeftLeg = new Line();
 	private Line xRightLeg = new Line();
-
+	/**
+	 * This method is the constructor method for a new CellView object
+	 * @param sideLength this is the int value of the CellView object in pixels
+	 */
 	public CellView(int sideLength) {
 		getStyleClass().add(STYLE_CLASS);
 		setState(CellState.EMPTY);
 		setSize(sideLength);
 		getChildren().addAll(background, xLeftLeg, xRightLeg);
 	}
-
+	/**
+	 * This method sets the state of the CellView object
+	 * @param state this is the state that the CellView object is to be set to 
+	 */
 	public void setState(CellState state) {
 		ObservableList<String> styleClasses = getStyleClass();
 		styleClasses.removeAll(
@@ -42,7 +52,10 @@ public class CellView extends StackPane {
 				throw new IllegalArgumentException();
 		}
 	}
-
+    /**
+     * This method sets the size of the CellView object
+     * @param sideLength this is the int value of the length to be set
+     */
 	public void setSize(int sideLength) {
 		background.setWidth(sideLength);
 		background.setHeight(sideLength);

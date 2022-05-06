@@ -12,7 +12,7 @@ import javafx.scene.layout.FlowPane;
 /**
  * Represents a grouping of clues.
  * 
- * @author It's you
+ * @author Paul Gariy
  * @version 0.1
  */
 public abstract class AbstractGroupCluesView extends FlowPane {
@@ -51,8 +51,7 @@ public abstract class AbstractGroupCluesView extends FlowPane {
 		
 		
 		
-		// TODO: Possibly add something here. Do not directly discuss your
-		// solution on Discord.
+		
 		setPrefWrapLength(Double.MAX_VALUE);
 		
 	}

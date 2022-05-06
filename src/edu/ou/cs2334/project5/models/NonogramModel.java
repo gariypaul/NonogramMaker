@@ -7,7 +7,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+/**
+ * This class creates the base model that the Nonogram is to follow
+ * @author gariy
+ *
+ */
 public class NonogramModel {
 
 	private static final String DELIMITER = " ";
@@ -17,7 +21,11 @@ public class NonogramModel {
 	private int[][] rowClues;
 	private int[][] colClues;
 	private CellState[][] cellStates;
-	
+	/**
+	 * This method is the constructor of a new NonngramModel object
+	 * @param rowClues this is int array representing the clues for the rows in the nonogram
+	 * @param colClues this is the int array representing the clues for the columns in the nonogram
+	 */
 	public NonogramModel(int[][] rowClues, int[][] colClues) {
 		// TODO: Implement deepCopy. 
 		// This is simple, and you should not ask about this on Discord.
@@ -26,7 +34,11 @@ public class NonogramModel {
 
 		cellStates = initCellStates(getNumRows(), getNumCols());
 	}
-	
+	/**
+	 * This method is the constructor of a new NonogramModel object
+	 * @param file this is the file that has the data to initialise a new NonogramModel
+	 * @throws IOException this exception is throw if there is any error in accessing the file specified
+	 */
 	public NonogramModel(File file) throws IOException {
 		// Number of rows and columns
 		BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -42,27 +54,53 @@ public class NonogramModel {
 		
 		reader.close();
 	}
-
+	/**
+	 * This method is the constructor of a new NonogramModel object
+	 * @param filename this is the string that represents the file to be used 
+	 * @throws IOException this ception is throw if there is any error in accessing the file specified by the string
+	 */
 	public NonogramModel(String filename) throws IOException {
 		this(new File(filename));
 	}
-	
+	/**
+	 * This method return the number of columns in the nonogram 
+	 * @return this is the int value of the number of columns
+	 */
 	public int getNumCols() {
 		return this.colClues.length;
 	}
-	
+	/**
+	 * This method returns the number of rows in the nonogram
+	 * @return this is the int value of the number of columns
+	 */
 	public int getNumRows() {
 		return this.rowClues.length;
 	}
-	
+	/**
+	 * This method gets the Cellstate of a cell in the specified index
+	 * @param rowIdx this is the index of the row the cell is in 
+	 * @param colIdx this is the index of the column the cell is in 
+	 * @return  this is the CellState of the cell in the specified index
+	 */
 	public CellState getCellState(int rowIdx, int colIdx) {
 		return this.cellStates[rowIdx][colIdx];
 	}
-	
+	/**
+	 * This method gets the Cellstate of a cell in the specified index in boolean form 
+	 * @param rowIdx this is the index of the row the cell is in 
+	 * @param colIdx this is the index of the column the cell is in 
+	 * @return this is state of the specified index in boolean form
+	 */
 	public boolean getCellStateasBoolean (int rowIdx, int colIdx) {
 		return CellState.toBoolean(this.cellStates[rowIdx][colIdx]);
 	}
-	
+	/**
+	 * This method sets the CellState of the specified index and returns true if changed and false if nothing changes
+	 * @param rowIdx this is the index of the row the cell is in 
+	 * @param colIdx this is the index of the column the cell is in 
+	 * @param state this is the CellState the index is to be set to 
+	 * @return this is the boolean value to indicate if the state has been changed
+	 */
 	public boolean setCellState(int rowIdx, int colIdx, CellState state) {
 		if(state==null||isSolved()||this.getCellState(rowIdx, colIdx)==state) {
 			return false;
@@ -72,35 +110,60 @@ public class NonogramModel {
 			return true;
 		}
 	}
-	
+	/**
+	 * This method gets the row Clues
+	 * @return this is the int array of the row clues
+	 */
 	public int[][] getRowClues(){
 		return deepCopy(this.rowClues);
 	}
-	
+	/**
+	 * This method gets the column Clues
+	 * @return this is the int array of the column clues
+	 */
 	public int[][] getColClues(){
 		return deepCopy(this.colClues);
 	}
-	
+	/**
+	 * This method gets the int value of the clue for a specific row
+	 * @param rowIdx this is the index of the specified row
+	 * @return this is the integer array of the clue
+	 */
 	public int[] getRowClue(int rowIdx) {
 		return Arrays.copyOf(this.rowClues[rowIdx], this.rowClues[rowIdx].length);
 	}
-	
+	/**
+	 * This method gets the int value of the clue for a specific clue
+	 * @param colIdx this is the index of the specified row
+	 * @return this is the integer array of the clue
+	 */
 	public int[] getColClue(int colIdx) {
 		return Arrays.copyOf(this.colClues[colIdx], this.colClues[colIdx].length);
 	}
-	
+	/**
+	 * This method returns a boolean value true if the row specified is solved and false otherwise
+	 * @param rowIdx this is the index value of the index of the row specified
+	 * @return this is the boolean value returned if solved or not
+	 */
 	public boolean isRowSolved(int rowIdx) {
 		int[] row = projectCellStatesRow(rowIdx);
 		boolean isSolved = Arrays.equals(row,this.rowClues[rowIdx]);
 		return isSolved;
 	}
-	
+	/**
+	  * This method returns a boolean value true if the column specified is solved and false otherwise
+	 * @param colIdx this is the index value of the index of the column specified
+	 * @return this is the boolean value returned if solved or not
+	 */
 	public boolean isColSolved(int colIdx) {
 		int[] col = projectCellStatesCol(colIdx);
 		boolean isSolved = Arrays.equals(col,this.colClues[colIdx]);
 		return isSolved;
 	}
-	
+	/**
+	 * This method return true if the puzzle is solved and false otherwise
+	 * @return this is the boolean value returned if solved or not
+	 */
 	public boolean isSolved() {
 		boolean isSolved=true;
 		for(int r=0;r<this.getNumRows()&&isSolved!=false;r++) {
@@ -111,7 +174,9 @@ public class NonogramModel {
 		}
 		return isSolved;
 	}
-	
+	/**
+	 * This method resets the cells in the model back to an EMPTY CellState
+	 */
 	public void resetCells() {
 		for(int r=0;r<this.getNumRows();r++) {
 		 for(int c=0;c<this.getNumCols();c++) {
@@ -121,7 +186,11 @@ public class NonogramModel {
 		}
 	}
 	/* Helper methods */
-	
+	/**
+	 * This method projects the boolean array passed 
+	 * @param cells this is the boolean array to be projected 
+	 * @return this is the List of integer values of the projected boolean array
+	 */
 	public static List<Integer> project(boolean[] cells){
 		ArrayList<Integer> projection = new ArrayList<Integer>();	
 		int counter = 0;
@@ -159,7 +228,11 @@ public class NonogramModel {
 		// Return the result
 		return cellStates;
 	}
-	
+	/**
+	 * This method projects the cellStates of the column of the specified index
+	 * @param colIdx this is the index of the column to be projected
+	 * @return this is the int array of the column's projection
+	 */
 	public int[] projectCellStatesCol(int colIdx) {
 		// TODO Auto-generated method stub
 		boolean[] colStates = new boolean [this.getNumRows()];
@@ -169,7 +242,11 @@ public class NonogramModel {
 		int[] projectedCol = project(colStates).stream().mapToInt(Integer::intValue).toArray();
 		return projectedCol;
 	}
-	
+	/**
+	* This method projects the cellStates of the row of the specified index
+	 * @param rowIdx this is the index of the row to be projected
+	 * @return this is the int array of the row's projection
+	 */
 	public int[] projectCellStatesRow(int rowIdx) {
 		// TODO Auto-generated method stub
 		boolean[] rowStates = new boolean[this.getNumCols()];

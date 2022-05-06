@@ -13,14 +13,21 @@ import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 import javafx.stage.FileChooser.ExtensionFilter;
-
+/**
+ * This is the class that bind the model data with the views
+ * @author gariy
+ *
+ */
 public class NonogramPresenter implements Openable{
 	
 	private NonogramView view;
 	private NonogramModel model;
 	private int cellLength;
 	private final static String DEFAULT_PUZZLE = "puzzles/space-invader.txt";
-	
+	/** 
+	 * This is the constructor for a NonogramPresenter Object
+	 * @param cellLength this is int value of the cell length in pixels
+	 */
 	public NonogramPresenter (int cellLength) {
 		this.cellLength=cellLength;
 		try {
@@ -130,7 +137,10 @@ public class NonogramPresenter implements Openable{
 		
 	}
 
-
+	/**
+	 * This method returns the window object of the NonogramPresenter object
+	 * @return this is the Window object that is returned
+	 */
 	public Window getWindow() {
 		// TODO Auto-generated method stub
 		try {
@@ -140,7 +150,10 @@ public class NonogramPresenter implements Openable{
 			return null;
 		}
 	}
-	
+	/**
+	 * This method returns the pane of the NonogramPresente object
+	 * @return this is the Pane object to be returned
+	 */
 	public Pane getPane() {
 		return this.view;
 	}
@@ -177,7 +190,9 @@ public class NonogramPresenter implements Openable{
 		model.resetCells();
 		synchronize();
 	}
-	
+	/**
+	 * This method is used to open a file that is to load data into the NonogramPresenter
+	 */
 	@Override
 	public void open(File file) throws IOException {
 		model = new NonogramModel(file);
